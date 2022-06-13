@@ -1,15 +1,16 @@
 import javax.swing.JOptionPane;
 
-public class num_to_words {
+public class num_to_words_copy {
     public static void main(String[] args) {
         int num = 0;
         int reenternumber = 0;
-        final String UNITS = "0 cero  ,1 uno   ,2 dos   ,3 tres  ,4 cuatro,5 cinco ,6 seis  ,7 siete ,8 ocho  ,9 nueve ";
-        final String TENTS = "1 diez     ,2 veinte   ,3 treinta  ,4 cuarenta ,5 cincuenta,6 sesenta  ,7 setenta  ,8 ochenta  ,9 noventa  ";
-        final String tweny = "veinti";
-        final String SPECIAL_TENT = "1 once      ,2 doce      ,3 trece     ,4 catorce   ,5 quince    ,6 dieciseis ,7 diecisiete,8 dieciocho ,9 diecinueve";
+        final String UNITS[] = { "cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve" };
+        final String TENTS[] = { "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta",
+                "noventa", "veinti" };
+        final String SPECIAL_TENT[] = { "once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete",
+                "dieciocho",
+                "diecinueve" };
         String num_S = "";
-        String num_word = "";
 
         do {
             try {
@@ -26,40 +27,27 @@ public class num_to_words {
                 }
 
                 if (num_S.length() == 1 || num_S.charAt(0) == 0) {
-                    num_word = UNITS.substring(UNITS.indexOf(num_S.charAt(0)) + 2, UNITS.indexOf(num_S.charAt(0)) + 8)
-                            .trim();
-                    JOptionPane.showMessageDialog(null, "El número " + num + " en palabras es: " + num_word);
+                    JOptionPane.showMessageDialog(null,
+                            "El número " + num + " en palabras es: " + UNITS[num_S.charAt(0) - '0']);
 
                 } else if (num_S.length() == 2) {
 
                     if (num_S.charAt(1) == '0') {
-                        num_word = TENTS
-                                .substring(TENTS.indexOf(num_S.charAt(0)) + 2, TENTS.indexOf(num_S.charAt(0)) + 11)
-                                .trim();
                         JOptionPane.showMessageDialog(null,
-                                "El número " + num + " en palabras es: " + num_word);
+                                "El número " + num + " en palabras es: " + TENTS[num_S.charAt(0) - '0' - 1]);
 
                     } else if (num_S.charAt(0) == '1' && num_S.charAt(1) != '0') {
-                        num_word = SPECIAL_TENT.substring(SPECIAL_TENT.indexOf(num_S.charAt(1)) + 2,
-                                SPECIAL_TENT.indexOf(num_S.charAt(1)) + 12).trim();
                         JOptionPane.showMessageDialog(null,
-                                "El número " + num + " en palabras es: " + num_word);
+                                "El número " + num + " en palabras es: " + SPECIAL_TENT[num_S.charAt(1) - '0' - 1]);
 
                     } else if (num_S.charAt(0) == '2' && num_S.charAt(1) != '0') {
-                        num_word = tweny + UNITS
-                                .substring(UNITS.indexOf(num_S.charAt(1)) + 2, UNITS.indexOf(num_S.charAt(1)) + 8)
-                                .trim();
                         JOptionPane.showMessageDialog(null,
-                                "El número " + num + " en palabras es: " + num_word);
+                                "El número " + num + " en palabras es: " + TENTS[9] + UNITS[num_S.charAt(1) - '0']);
 
                     } else {
-                        num_word = TENTS
-                                .substring(TENTS.indexOf(num_S.charAt(0)) + 2, TENTS.indexOf(num_S.charAt(0)) + 11)
-                                .trim() + " y "
-                                + UNITS.substring(UNITS.indexOf(num_S.charAt(1)) + 2,
-                                        UNITS.indexOf(num_S.charAt(1)) + 8).trim();
                         JOptionPane.showMessageDialog(null,
-                                "El número " + num + " en palabras es: " + num_word);
+                                "El número " + num + " en palabras es: " + TENTS[num_S.charAt(0) - '0' - 1] + " y "
+                                        + UNITS[num_S.charAt(1) - '0']);
 
                     }
 
