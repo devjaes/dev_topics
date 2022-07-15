@@ -1,6 +1,6 @@
 /*5. Tomando como referencia el ejercicio 5 de la tarea de escritura: desarrolle un
 programa que imprima a los alumnos en donde su promedio sea mayor a 8.*/
-package Read;
+package fileExcersices.Read;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
