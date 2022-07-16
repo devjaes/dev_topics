@@ -1,3 +1,5 @@
+package functions;
+
 
 /*
  * Defina una clase llamada “Operaciones” que contenga métodos para el cálculo de

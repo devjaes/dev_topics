@@ -1,7 +1,7 @@
 /*2. Desarrolle un programa que solicite 10 palabras ingresadas por teclado y las
 almacene en un archivo. El programa debe cambiar las vocales que contenga cada
 palabra ingresada por un guion bajo. */
-package Write;
+package fileExcersices.Write;
 
 import java.io.File;
 import java.io.FileWriter;

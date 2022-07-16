@@ -4,7 +4,7 @@ solicitadas previamente (primer y segundo parcial). La cantidad de alumnos a
 ingresar se ingresará por teclado. Almacenar en un archivo la información de todos
 los alumnos ingresados por teclado, en donde la información de cada alumno estará
 en una línea separada por un punto y coma “;”. */
-package Write;
+package fileExcersices.Write;
 
 import java.io.File;
 import java.io.FileWriter;

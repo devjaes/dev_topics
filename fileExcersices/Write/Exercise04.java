@@ -2,7 +2,7 @@
 archivo. Cada placa se almacenará en una línea; Para ello utilizar la generación de
 letras y de números aleatorios. La placa tendrá el siguiente formato: “AAA-0000”. El
 número que conforma la placa consta de 4 dígitos. */
-package Write;
+package fileExcersices.Write;
 
 import java.io.File;
 import java.io.FileWriter;

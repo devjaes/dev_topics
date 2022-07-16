@@ -1,3 +1,4 @@
+package functions;
 
 /*Cree una clase llamada “Principal” y defina un método en el cual se pase como
 parametro un número, el método debe realizar el proceso para verificar si este

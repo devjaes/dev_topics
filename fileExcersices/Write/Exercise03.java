@@ -1,7 +1,7 @@
 /*3. Desarrolle un programa que solicite 10 palabras ingresadas por teclado y las
 almacene en un archivo. El programa intercambiará las vocales a por @; e por 3, o
 por 0 (cero). */
-package Write;
+package fileExcersices.Write;
 
 import java.io.File;
 import java.io.FileWriter;

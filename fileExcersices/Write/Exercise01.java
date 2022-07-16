@@ -1,7 +1,7 @@
 /*1. Desarrolle un programa que solicite 10 nombres de personas ingresadas por teclado
 y almacene en un archivo. El programa debe transformar la primera letra del nombre
 a mayúscula. Cada registro estará almacenado en una línea. */
-package Write;
+package fileExcersices.Write;
 
 import java.io.File;
 import java.io.FileWriter;

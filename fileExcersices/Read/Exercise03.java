@@ -2,7 +2,7 @@
 programa que cuente la cantidad de arroba (@), la cantidad de números 3 y la
 cantidad de ceros que contienen todas las cadenas. Imprima los totales en pantalla. */
 
-package Read;
+package fileExcersices.Read;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

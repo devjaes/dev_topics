@@ -1,7 +1,7 @@
 /*4. Tomando como referencia el ejercicio 4 de la tarea de escritura; desarrolle un
 programa que lea el listado de placas e imprima en pantalla únicamente aquellas
 que terminen en un número par.*/
-package Read;
+package fileExcersices.Read;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

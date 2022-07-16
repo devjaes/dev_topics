@@ -3,7 +3,7 @@ menos 4 métodos) que realizarán el cálculo de segundos totales dependiendo de
 valores que se ingrese como argumentos (horas, minutos, segundos). Se debe
 utilizar sobrecarga de métodos. Finalmente debe imprimir la conversión de las horas
 y minutos ingresados, en segundos. */
-package Segundos_calc;
+package functions.Segundos_calc;
 
 import java.util.Scanner;
 

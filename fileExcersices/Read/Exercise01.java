@@ -1,7 +1,7 @@
 /*1. Tomando como referencia el ejercicio 1 de la tarea de escritura; desarrolle un
 programa que lea el listado de nombres e imprima la longitud de caracteres de cada
 uno de los nombres. */
-package Read;
+package fileExcersices.Read;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

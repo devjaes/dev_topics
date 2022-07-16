@@ -1,7 +1,7 @@
 /*2. Tomando como referencia el ejercicio 2 de la tarea de escritura; desarrolle un
 programa que cuente la cantidad de guiones que contiene cada cadena e imprima
 en pantalla. */
-package Read;
+package fileExcersices.Read;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

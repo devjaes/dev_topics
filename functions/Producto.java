@@ -1,3 +1,5 @@
+package functions;
+
 /*Defina una clase llamada “Producto” y cree los atributos que usted considere
 necesarios (mínimo 4). Posteriormente crear tres productos diferentes utilizando la
 instanciación de objetos. Finalmente imprima los datos de cada uno de los productos

@@ -1,4 +1,4 @@
-package Segundos_calc;
+package functions.Segundos_calc;
 
 public class Calc {
     public int segundosTotal(int horas, int minutos, int segundos) {
