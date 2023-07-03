@@ -23,7 +23,7 @@ public class Graph {
         Vertice vertice = new Vertice(ponderation);
 
         for (Vertice v : this.vertices) {
-            if (v.ponderation.equals(vertice.ponderation))
+            if (v.equals(vertice))
                 return false;
         }
 
@@ -38,8 +38,11 @@ public class Graph {
 
         Edge edge = new Edge(source, target, ponderation);
 
-        if (this.edges.contains(edge) || edge == null)
+        if (edge.findInList(this.edges) || edge == null) {
+            System.out.println("Agregando arista: " + edge.toString());
             return false;
+
+        }
 
         if (!this.vertices.contains(edge.source) || !this.vertices.contains(edge.target))
             return false;
@@ -50,35 +53,41 @@ public class Graph {
         return true;
     }
 
-    public boolean removeVertice(Object ponderation) {
-        if (ponderation == null || ponderation.equals("") || ponderation.equals(" ") || ponderation instanceof Edge
-                || ponderation instanceof Vertice)
-            return false;
-
-        for (Vertice vertice : this.vertices) {
-            if (vertice.ponderation.equals(ponderation)) {
-                for (Edge edge : vertice.inEdges) {
-                    this.edges.remove(edge);
+    public boolean removeVertice(Vertice verticeToRemove) {
+        if (verticeToRemove != null) {
+            for (Vertice vertice : this.vertices) {
+                if (vertice.equals(verticeToRemove)) {
+                    for (Edge edge : vertice.inEdges) {
+                        this.removeEdge(edge);
+                    }
+                    for (Edge edge : vertice.outEdges) {
+                        this.removeEdge(edge);
+                    }
+                    this.vertices.remove(vertice);
+                    return true;
                 }
-                for (Edge edge : vertice.outEdges) {
-                    this.edges.remove(edge);
-                }
-                this.vertices.remove(vertice);
-                return true;
             }
         }
+
         return false;
     }
 
-    public boolean removeEdge(Vertice source, Vertice target) {
+    public boolean removeEdge(Vertice source, Vertice target, Object ponderation) {
         if (source == null || target == null)
             return false;
 
-        for (Edge edge : source.outEdges) {
-            if (edge.target.equals(target)) {
+        return removeEdge(new Edge(source, target, ponderation));
+    }
+
+    public boolean removeEdge(Edge edge) {
+        if (edge == null)
+            return false;
+
+        for (Edge e : edge.source.outEdges) {
+            if (e.equals(edge)) {
+                edge.source.outEdges.remove(e);
+                edge.target.inEdges.remove(e);
                 this.edges.remove(edge);
-                edge.source.outEdges.remove(edge);
-                edge.target.inEdges.remove(edge);
                 return true;
             }
         }
@@ -94,5 +103,38 @@ public class Graph {
                 return true;
         }
         return false;
+    }
+
+    public Vertice[][] getMatrixGraph() {
+        Vertice[][] matrix = new Vertice[this.vertices.size() + 1][this.vertices.size() + 1];
+        matrix[0][0] = new Vertice("V");
+
+        for (int i = 0; i < this.vertices.size(); i++) {
+            matrix[0][i + 1] = this.vertices.get(i);
+            matrix[i + 1][0] = this.vertices.get(i);
+        }
+
+        for (Edge edge : this.edges) {
+            int i = this.vertices.indexOf(edge.source);
+            int j = this.vertices.indexOf(edge.target);
+            matrix[i + 1][j + 1] = new Vertice(edge.ponderation.toString()); // Convertimos el ponderation a String
+        }
+
+        return matrix;
+    }
+
+    public void printMatrixGraph() {
+        Vertice[][] matrix = this.getMatrixGraph();
+
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.print("|");
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] != null)
+                    System.out.printf("%4s|", matrix[i][j].ponderation.toString());
+                else
+                    System.out.printf("%4s|", " ");
+            }
+            System.out.println();
+        }
     }
 }
