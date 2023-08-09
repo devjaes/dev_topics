@@ -49,6 +49,43 @@ func main() {
 	for i := 0; i < 10; i++ {
 		fmt.Println(i)
 	}
+
+	for value, key := range myobject4 {
+		fmt.Println(value, key)
+	}
+
+	const myConst = 3
+	fmt.Println(myConst)
+
+	if 1 == 1 && 2 == 2 || 3 == 3 {
+		fmt.Println("1 == 1")
+	} else if 1 == 1 {
+		fmt.Println("1 != 1")
+	} else {
+		fmt.Println("1 != 1")
+	}
+
+	// switch
+	switch 1 {
+	case 1:
+		fmt.Println("1")
+	case 2:
+		fmt.Println("2")
+	default:
+		fmt.Println("default")
+	}
+
+	// defer
+	defer fmt.Println("defer")
+
+	// struct
+	type myStruct struct {
+		x int
+		y int
+	}
+
+	mystruct := myStruct{1, 2}
+	fmt.Println(mystruct)
 }
 
 func oeu(oniu int) string {
