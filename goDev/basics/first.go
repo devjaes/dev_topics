@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
-func main() {
+func mainnnn() {
 	fmt.Print("Hello, World!\n")
 	fmt.Println("Hello, World!")
 	var x = 3
@@ -86,6 +89,16 @@ func main() {
 
 	mystruct := myStruct{1, 2}
 	fmt.Println(mystruct)
+
+	// pointer
+	var mypointer *int = &x
+	fmt.Println(mypointer)
+	fmt.Println(*mypointer)
+
+	//reflect
+	fmt.Println(reflect.TypeOf(x))
+	fmt.Println(reflect.TypeOf(myobject4))
+	fmt.Println(reflect.TypeOf(myobject4["one"]))
 }
 
 func oeu(oniu int) string {
